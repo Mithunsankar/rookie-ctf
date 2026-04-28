@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Home {% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Authenticated Area</p>
+        <h1>Welcome, <span>{{ rendered_username | safe }}</span></h1>
+        <p class="hero-subtitle">Your account is active. Watch the learning material, observe the page, and think like an attacker.</p>
+        <div class="hero-meta">
+            <span>Stored username</span>
+            <code>{{ raw_username }}</code>
+        </div>
+    </div>
+</section>
+
+<section class="video-section" aria-label="Learning videos">
+    <div class="section-heading">
+        <p class="eyebrow">Watch Room</p>
+        <h2>Recommended videos</h2>
+    </div>
+    <div class="video-grid">
+        {% for video in videos %}
+            <article class="video-card">
+                <iframe
+                    src="{{ video }}"
+                    title="YouTube video player"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% endblock %}

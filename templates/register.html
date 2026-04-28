@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Register {% endblock %}
+
+{% block content %}
+<section class="auth-layout">
+    <div class="auth-copy">
+        <p class="eyebrow">Start Here</p>
+        <h1>Create a player account</h1>
+        <p>Your username becomes part of the home page greeting after login. Choose it carefully.</p>
+    </div>
+
+    <form class="auth-card" method="post">
+        <div class="form-header">
+            <h2>Register</h2>
+            <p>Pick any username and password.</p>
+        </div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" required>
+
+        <button type="submit">Create Account</button>
+        <p class="form-note">Already registered? <a href="{{ url_for('login') }}">Log in</a></p>
+    </form>
+</section>
+{% endblock %}
