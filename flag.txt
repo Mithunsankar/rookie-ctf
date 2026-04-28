@@ -1,1 +1,1 @@
-CTF{jinja2_is_not_s4fe_by_default}
+NOVA{jinja2_is_not_s4fe_by_default}
